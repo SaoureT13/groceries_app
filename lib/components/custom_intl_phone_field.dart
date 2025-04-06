@@ -8,6 +8,7 @@ class CustomIntlPhoneField extends StatefulWidget {
   final bool obscureText;
   final Function? handleOnTap;
   final Function(PhoneNumber)? onChanged;
+  final String? Function(PhoneNumber?)? validator;
   // Removed the mutable 'number' field to comply with immutability.
 
   const CustomIntlPhoneField({
@@ -16,6 +17,7 @@ class CustomIntlPhoneField extends StatefulWidget {
     this.obscureText = false,
     this.handleOnTap,
     this.onChanged,
+    this.validator
   });
 
   @override
@@ -23,6 +25,8 @@ class CustomIntlPhoneField extends StatefulWidget {
 }
 
 class _CustomIntlPhoneFieldState extends State<CustomIntlPhoneField> {
+  bool isValid = false; 
+  
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
@@ -47,6 +51,13 @@ class _CustomIntlPhoneFieldState extends State<CustomIntlPhoneField> {
         widget.onChanged?.call(phone);
       },
       onTap: () => widget.handleOnTap?.call(),
+      validator: (phone) {
+        final validationResult = widget.validator?.call(phone);
+        setState(() {
+          isValid = validationResult == null; // Update isValid based on validation
+        });
+        return validationResult;
+      },
     );
   }
 }

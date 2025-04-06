@@ -13,6 +13,7 @@ class Number extends StatefulWidget {
 class _NumberState extends State<Number> {
   final TextEditingController mobileNumberController = TextEditingController();
   PhoneNumber? phoneNumber;
+  bool isPhoneValid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +21,13 @@ class _NumberState extends State<Number> {
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigator.pushNamed(context, "/verification");
-          // if(mobileNumberController.text.length == 0){
-
-          // }
           if (phoneNumber != null && phoneNumber!.number.isNotEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text("Phone Number: ${phoneNumber!.completeNumber}"),
-              ),
-            );
+            // ScaffoldMessenger.of(context).showSnackBar(
+            //   SnackBar(
+            //     content: Text("Phone Number: ${phoneNumber!.completeNumber}"),
+            //   ),
+            // );
+            Navigator.pushNamed(context, "/verification");
           }
         },
         backgroundColor: Color(0xff53B175),
@@ -53,6 +51,18 @@ class _NumberState extends State<Number> {
                       setState(() {
                         phoneNumber = phone;
                       });
+                    },
+                    validator: (phone) {
+                      if (phone == null || phone.number.isEmpty) {
+                        return 'Please enter your phone number';
+                      }
+                      if (phone.number.length < 8) {
+                        return 'Phone number must be at least 8 digits';
+                      }
+                      setState(() {
+                        isPhoneValid = true; // Update validation state
+                      });
+                      return null; // Valid phone number
                     },
                   ),
                 ),
