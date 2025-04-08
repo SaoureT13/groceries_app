@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl_phone_field/phone_number.dart';
-import "package:nectar_groceries_app/components/custom_intl_phone_field.dart";
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:nectar_groceries_app/components/custom_intl_phone_field.dart';
 
 class Number extends StatefulWidget {
   const Number({super.key});
@@ -12,8 +12,9 @@ class Number extends StatefulWidget {
 
 class _NumberState extends State<Number> {
   final TextEditingController mobileNumberController = TextEditingController();
-  PhoneNumber? phoneNumber;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool isPhoneValid = false;
+  PhoneNumber number = PhoneNumber(isoCode: 'CI');
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,7 @@ class _NumberState extends State<Number> {
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (phoneNumber != null && phoneNumber!.number.isNotEmpty) {
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     content: Text("Phone Number: ${phoneNumber!.completeNumber}"),
-            //   ),
-            // );
+          if (_formKey.currentState!.validate()) {
             Navigator.pushNamed(context, "/verification");
           }
         },
@@ -44,26 +40,24 @@ class _NumberState extends State<Number> {
             ),
             Column(
               children: [
-                SizedBox(
-                  child: CustomIntlPhoneField(
-                    controller: mobileNumberController,
-                    onChanged: (phone) {
-                      setState(() {
-                        phoneNumber = phone;
-                      });
-                    },
-                    validator: (phone) {
-                      if (phone == null || phone.number.isEmpty) {
-                        return 'Please enter your phone number';
-                      }
-                      if (phone.number.length < 8) {
-                        return 'Phone number must be at least 8 digits';
-                      }
-                      setState(() {
-                        isPhoneValid = true; // Update validation state
-                      });
-                      return null; // Valid phone number
-                    },
+                Form(
+                  key: _formKey,
+                  child: SizedBox(
+                    child: CustomIntlPhoneField(
+                      controller: mobileNumberController,
+                      validator: (phone) {
+                        if (phone == null || phone.isEmpty) {
+                          return "Please enter your phone number";
+                        }
+                        return null;
+                      },
+                      onChanged: (phone) {
+                        setState(() {
+                          number = phone;
+                        });
+                      },
+                      label: "Mobile Number",
+                    ),
                   ),
                 ),
               ],

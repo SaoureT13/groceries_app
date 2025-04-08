@@ -32,7 +32,7 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: [
               SizedBox(
-                height: 160,
+                height: 100,
                 child: SvgPicture.asset(
                   "assets/icons/colored_carott_icon.svg",
                   width: 47.84,
@@ -70,7 +70,7 @@ class _SignupState extends State<Signup> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     CustomTextFormField(
                       controller: emailController,
                       labelText: "Email",
@@ -89,7 +89,7 @@ class _SignupState extends State<Signup> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     CustomTextFormField(
                       controller: passwordController,
                       labelText: "Password",
@@ -102,7 +102,7 @@ class _SignupState extends State<Signup> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     Text.rich(
                       TextSpan(
                         style: TextStyle(fontSize: 14),
@@ -121,7 +121,7 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 50, bottom: 25),
+                      padding: EdgeInsets.only(top: 25, bottom: 25),
                       child: CustomElevatedButton(
                         width: 367,
                         height: 67,

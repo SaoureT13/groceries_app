@@ -43,6 +43,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       validator: widget.validator,
       maxLength: widget.maxLength,
+      style: TextStyle(fontSize: 18),
       cursorColor: const Color(0xff7C7C7C),
       keyboardType: widget.textInputType,
       obscureText: isObscured,

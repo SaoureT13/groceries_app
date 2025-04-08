@@ -39,11 +39,14 @@ class _SignIn extends State<Signin> {
           SizedBox(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.53),
-              child: CustomIntlPhoneField(
-                controller: mobileNumberController,
-                handleOnTap: () {
-                  Navigator.pushNamed(context, "/number");
-                },
+              child: SizedBox(
+                child: CustomIntlPhoneField(
+                  controller: mobileNumberController,
+                  handleOnTap: (){
+                    Navigator.pushNamed(context, "/number");
+                  },
+                  label: "Mobile Number",
+                ),
               ),
             ),
           ),

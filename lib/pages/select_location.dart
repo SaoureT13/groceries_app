@@ -90,12 +90,9 @@ class _SelectLocationState extends State<SelectLocation> {
                     height: 67,
                     text: "Submit",
                     handleOnPressed: () {
-                      // if (_formKey.currentState!.validate()) {
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //     const SnackBar(content: Text('Processing Data')),
-                      //   );
-                      // }
-                      Navigator.pushNamed(context, "/login");
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.pushNamed(context, "/login");
+                      }
                     },
                   ),
                 ],

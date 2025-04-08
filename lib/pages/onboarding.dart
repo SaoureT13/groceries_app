@@ -39,7 +39,7 @@ class Onboarding extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     Text(
-                      "Ger your groceries in as fast as one hour",
+                      "Get your groceries in as fast as one hour",
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white,

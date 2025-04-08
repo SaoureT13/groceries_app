@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               SizedBox(
-                height: 160,
+                height: 100,
                 child: SvgPicture.asset(
                   "assets/icons/colored_carott_icon.svg",
                   width: 47.84,
@@ -111,9 +111,7 @@ class _LoginState extends State<Login> {
                         color: Color(0xff53B175),
                         handleOnPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Processing Data')),
-                            );
+                            Navigator.pushNamed(context, "/d");
                           }
                         },
                       ),
@@ -130,7 +128,7 @@ class _LoginState extends State<Login> {
                         ),
                         TextButton(
                           onPressed: () {
-                             Navigator.pushNamed(context, "/signup");
+                            Navigator.pushNamed(context, "/signup");
                           },
                           child: Text(
                             "Signup",

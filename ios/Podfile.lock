@@ -2,20 +2,38 @@ PODS:
   - Flutter (1.0.0)
   - flutter_native_splash (2.4.3):
     - Flutter
+  - libphonenumber_plugin (0.0.1):
+    - Flutter
+    - PhoneNumberKit (~> 3.7.8)
+  - PhoneNumberKit (3.7.11):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.7.11)
+    - PhoneNumberKit/UIKit (= 3.7.11)
+  - PhoneNumberKit/PhoneNumberKitCore (3.7.11)
+  - PhoneNumberKit/UIKit (3.7.11):
+    - PhoneNumberKit/PhoneNumberKitCore
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
+  - libphonenumber_plugin (from `.symlinks/plugins/libphonenumber_plugin/ios`)
+
+SPEC REPOS:
+  trunk:
+    - PhoneNumberKit
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   flutter_native_splash:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
+  libphonenumber_plugin:
+    :path: ".symlinks/plugins/libphonenumber_plugin/ios"
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
+  libphonenumber_plugin: e3f18ea4f29a54af15a8853817c3773c31646cff
+  PhoneNumberKit: ced55861269312a5e3bc2ef82a58d6255b1c976a
 
 PODFILE CHECKSUM: 4305caec6b40dde0ae97be1573c53de1882a07e5
 
