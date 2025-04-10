@@ -53,7 +53,7 @@ class Onboarding extends StatelessWidget {
                       width: 353,
                       child: FilledButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, "/signin");
+                          Navigator.pushNamed(context, "/home");
                         },
                         style: FilledButton.styleFrom(
                           backgroundColor: const Color(0xff53B175),

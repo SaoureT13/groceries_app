@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_groceries_app/pages/home_screen.dart';
 import 'package:nectar_groceries_app/pages/login.dart';
 import 'package:nectar_groceries_app/pages/number.dart';
 import 'package:nectar_groceries_app/pages/onboarding.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Gilroy",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        scaffoldBackgroundColor: Colors.white
       ),
       home: const Onboarding(),
       routes: {
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
         "/select_location": (context) => SelectLocation(),
         "/login": (context) => Login(),
         "/signup": (context) => Signup(),
+        "/home": (context) => HomeScreen(),
       },
     );
   }
