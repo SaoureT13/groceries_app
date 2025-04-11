@@ -88,6 +88,8 @@ flutter:
         - assets/icons/plus_icon.svg
         - assets/icons/share_icon.svg
         - assets/images/red_apple_image.png
+        - assets/images/fruits_vegetables_image.png
+        - assets/icons/settings_icon.svg
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/to/resolution-aware-images

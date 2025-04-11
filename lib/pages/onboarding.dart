@@ -64,7 +64,7 @@ class Onboarding extends StatelessWidget {
                       width: 353,
                       child: FilledButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, "/home");
+                          Navigator.pushNamed(context, "/navigation");
                         },
                         style: FilledButton.styleFrom(
                           backgroundColor: const Color(0xff53B175),

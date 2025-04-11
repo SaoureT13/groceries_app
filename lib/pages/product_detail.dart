@@ -3,10 +3,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:expandable/expandable.dart';
 import 'package:nectar_groceries_app/components/custom_accordion.dart';
 import 'package:nectar_groceries_app/components/custom_elevated_button.dart';
-import 'package:nectar_groceries_app/extensions/string_extensions.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({super.key, required this.productName});
@@ -44,7 +42,7 @@ class _ProductDetailState extends State<ProductDetail> {
           child: CustomElevatedButton(
             width: double.infinity,
             height: 67,
-            text: "add to basket".toCapitalize(),
+            text: "add to basket",
             color: Color(0xff53B175),
             handleOnPressed: () {},
           ),

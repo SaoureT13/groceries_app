@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_groceries_app/components/custom_elevated_button.dart';
 import 'package:nectar_groceries_app/components/custom_text_form_field.dart';
-import 'package:nectar_groceries_app/extensions/string_extensions.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -45,7 +44,7 @@ class _SignupState extends State<Signup> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      "sign up".toCapitalize(),
+                      "sign up",
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
