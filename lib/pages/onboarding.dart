@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Onboarding extends StatelessWidget {
@@ -6,6 +7,16 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent, // Fond de la status bar
+        statusBarIconBrightness: Brightness.dark, // Icônes en noir
+        statusBarBrightness: Brightness.light, // Pour iOS (texte noir)
+        systemNavigationBarColor: Colors.white, // (facultatif)
+        systemNavigationBarIconBrightness: Brightness.dark, // (facultatif)
+      ),
+    );
+
     return Scaffold(
       body: Stack(
         children: [
@@ -34,7 +45,7 @@ class Onboarding extends StatelessWidget {
                         fontSize: 48,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                        height: 1.2
+                        height: 1.2,
                       ),
                       textAlign: TextAlign.center,
                     ),

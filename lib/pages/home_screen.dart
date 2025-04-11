@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar_groceries_app/components/product_list.dart';
 import 'package:nectar_groceries_app/components/search_bar.dart';
@@ -191,6 +192,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent, // Fond de la status bar
+        statusBarIconBrightness: Brightness.dark, // Icônes en noir
+        statusBarBrightness: Brightness.light, // Pour iOS (texte noir)
+        systemNavigationBarColor: Colors.white, // (facultatif)
+        systemNavigationBarIconBrightness: Brightness.dark, // (facultatif)
+      ),
+    );
+
     List<Map<String, dynamic>> filteredProducts =
         search == null || search == ""
             ? products

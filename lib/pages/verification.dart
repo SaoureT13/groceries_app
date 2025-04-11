@@ -57,7 +57,7 @@ class _VerificationState extends State<Verification> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
         child: Column(
           children: [
             SizedBox(

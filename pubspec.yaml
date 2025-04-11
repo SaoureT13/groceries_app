@@ -39,6 +39,7 @@ dependencies:
         git:
             url: https://github.com/Shahidbangash/intl_phone_number_input.git
             ref: develop
+    expandable: ^5.0.1
 
 dev_dependencies:
     flutter_test:
@@ -83,6 +84,10 @@ flutter:
         - assets/icons/favorite_icon.svg
         - assets/icons/explore_icon.svg
         - assets/icons/cart_icon.svg
+        - assets/icons/minus_icon.svg
+        - assets/icons/plus_icon.svg
+        - assets/icons/share_icon.svg
+        - assets/images/red_apple_image.png
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/to/resolution-aware-images
