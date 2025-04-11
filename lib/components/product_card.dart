@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nectar_groceries_app/data/product.dart';
 import 'package:nectar_groceries_app/pages/product_detail.dart';
 
 class ProductCard extends StatefulWidget {
-  final Map<String, dynamic> product;
+  final Product product;
 
   const ProductCard({super.key, required this.product});
 
@@ -20,7 +21,7 @@ class _ProductCardState extends State<ProductCard> {
           context,
           MaterialPageRoute(
             builder:
-                (context) => ProductDetail(productName: widget.product["name"]),
+                (context) => ProductDetail(productName: widget.product.name),
           ),
         );
       },
@@ -46,9 +47,9 @@ class _ProductCardState extends State<ProductCard> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        widget.product["name"],
+                        widget.product.name,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.left,
@@ -59,7 +60,7 @@ class _ProductCardState extends State<ProductCard> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        widget.product["description"],
+                        widget.product.description,
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -74,7 +75,7 @@ class _ProductCardState extends State<ProductCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$${widget.product["price"].toString()}",
+                        "\$${widget.product.price.toString()}",
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
